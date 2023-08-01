@@ -1,1 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@500&display=swap");
+
+$bg-color: hsl(256, 33, 10);
+$dot-color: hsl(256, 33, 70);
+$dot-size: 1px;
+$dot-space: 42px;
+
+body {
+  background: #333;
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+}
+
+.menu {
+  position: relative;
+  width: 54px;
+  font-size: 4rem;
+  font-family: "Tektur", sans-serif;
+  color: #fff;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    transition: 0.8s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:before {
+    content: "M \00a0 \00a0 \00a0 \00a0 \00a0U";
+    top: -90px;
+    left: -100%;
+    width: 225px;
+  }
+
+  &:after {
+    content: "N";
+    top: 50px;
+    left: 96%;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    top: -4px;
+    opacity: 1;
+    transition: 0.8s ease, opacity 0.17s 0.03s ease-in;
+  }
+
+  .bar {
+    width: 80%;
+    height: 4px;
+    background: white;
+    margin: 16px auto 0;
+    transition: transform 0.4s ease;
+  }
+}
 
