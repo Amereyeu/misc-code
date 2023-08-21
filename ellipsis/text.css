@@ -1,1 +1,9 @@
 
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
