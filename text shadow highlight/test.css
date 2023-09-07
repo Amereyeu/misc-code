@@ -1,1 +1,22 @@
 
+:root {
+  --hue: 666;
+  --bg: oklch(35% 0.3 var(--hue));
+  --text: oklch(85% 0.1 var(--hue));
+  --shadow: oklch(25% 0.2 var(--hue));
+  --highlight: oklch(98% 0.05 var(--hue));
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: var(--bg);
+  //color: var(--text);
+}
+
+h2 {
+  font-size: 7rem;
+  letter-spacing: -6px;
+  text-shadow: 0 0.15ch 15px var(--shadow), 0 -2px 0 var(--highlight);
+}
