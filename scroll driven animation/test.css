@@ -1,1 +1,26 @@
 
+body {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+.indicator {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0.3rem;
+  background: linear-gradient(45deg, whitesmoke, dodgerblue);
+  animation: line linear;
+  animation-timeline: scroll(root);
+}
+
+@keyframes line {
+  to {
+    width: 100%;
+  }
+}
