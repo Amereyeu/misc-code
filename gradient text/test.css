@@ -1,1 +1,15 @@
 
+body {
+  background: #000;
+}
+div {
+  background: linear-gradient(to left, hsl(200 100% 62%), hsl(122 100% 59%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+h1 {
+  font-size: 9rem;
+  margin-top: 10rem;
+}
