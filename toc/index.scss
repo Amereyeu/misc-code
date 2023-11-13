@@ -1,1 +1,85 @@
 
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  background: #ddd;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.toc {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 40px;
+  width: 100%;
+
+  ol {
+    counter-reset: one two three four;
+
+    li:before {
+      counter-increment: one;
+      content: counter(one) ".";
+    }
+
+    ol {
+      counter-reset: two three four;
+
+      li:before {
+        counter-increment: two;
+        content: counter(one) "." counter(two);
+      }
+
+      ol {
+        counter-reset: three four;
+
+        li:before {
+          counter-increment: three;
+          content: counter(one) "." counter(two) "." counter(three);
+        }
+
+        ol {
+          counter-reset: four;
+
+          li:before {
+            counter-increment: four;
+            content: counter(one) "." counter(two) "." counter(three) "."
+              counter(four);
+          }
+        }
+      }
+    }
+  }
+
+  ol {
+    list-style: none;
+    margin-left: 8px;
+    padding-left: 4px;
+  }
+
+  li:before {
+    background: #f9f9f9;
+    color: #aaa;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+  }
+
+  a {
+    color: #888;
+    font-size: 17px;
+    font-weight: normal;
+    margin-left: 4px;
+    text-decoration: none;
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
