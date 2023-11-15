@@ -1,1 +1,86 @@
+$medium: 769px;
+$bg-color: hsl(256, 33, 10);
+$dot-color: hsl(256, 33, 70);
+$dot-size: 1px;
+$dot-space: 22px;
 
+@mixin break($breakpoint...) {
+  @if length($breakpoint) ==1 {
+    @media (min-width: nth($breakpoint, 1)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+      @content;
+    }
+  }
+}
+
+body {
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+}
+
+.wrap {
+  align-items: center;
+  height: 100vh;
+  display: grid;
+}
+
+.partners__logo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  height: 250px;
+
+  @include break($medium) {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-block-start: 3rem;
+    padding-block-end: 3rem;
+    height: initial;
+  }
+
+  .logo-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include break($medium) {
+      margin-top: 0;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0;
+      max-block-size: 60px;
+      max-inline-size: 150px;
+      transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 5rem;
+      height: 5rem;
+      color: white;
+
+      &.hide {
+        opacity: 0;
+      }
+
+      &.to-top {
+        transform: scale(0.4) translateY(-150px);
+      }
+
+      &.to-bottom {
+        transform: scale(0.4) translateY(150px);
+      }
+    }
+  }
+}
