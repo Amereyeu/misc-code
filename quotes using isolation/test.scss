@@ -1,1 +1,35 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-size: 18px;
+  background: #ddd;
+}
+
+.quote {
+  font-size: calc(1rem + 1vw);
+  max-width: 600px;
+  position: relative;
+  background: #fff;
+  isolation: isolate;
+
+  p {
+    padding: 20px;
+    font-weight: 400;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 2em;
+    top: 1rem;
+    z-index: -1;
+    width: 5rem;
+    aspect-ratio: 1;
+    background: url(https://raw.githubusercontent.com/francescovetere/testimonial-grid-section/main/images/bg-pattern-quotation.svg)
+      no-repeat center;
+    background-size: contain;
+  }
+}
 
