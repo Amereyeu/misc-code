@@ -1,1 +1,31 @@
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.box {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  background: #eee;
+}
+
+@media screen and (width < 300px) {
+  .box {
+    background: red;
+  }
+}
+
+@media screen and (width >= 800px) {
+  .box {
+    background: green;
+  }
+}
+
+@media screen and (300px <= width <= 800px) {
+  .box {
+    background: yellow;
+  }
+}
 
