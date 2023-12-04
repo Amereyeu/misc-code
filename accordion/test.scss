@@ -1,1 +1,129 @@
+$accordion1: #2a2a2b;
+$accordion2: #4eb5cf;
+$accordion3: #e75b1a;
+$accordion4: #991788;
+
+@mixin states($color: $default) {
+  border-color: $color;
+  color: rgba(255, 255, 255, 0.9);
+  background: $color;
+
+  &:hover {
+    border-color: $color;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: darken($color, 10%);
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-size: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+.accordion__wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.accordion {
+  width: 800px;
+
+  &--1 {
+    @include states($accordion1);
+  }
+
+  &--2 {
+    @include states($accordion2);
+  }
+
+  &--3 {
+    @include states($accordion3);
+  }
+
+  &--4 {
+    @include states($accordion4);
+  }
+
+  &__item {
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 8px;
+    min-height: 50px;
+    max-height: 70px;
+    transition: all 0.3s;
+
+    &__header {
+      outline: none;
+      font-size: 16px;
+      padding: 13px;
+
+      .close {
+        display: none;
+        font-size: 16px;
+        color: #fff;
+        opacity: 1;
+        font-weight: normal;
+        text-shadow: none;
+        float: none;
+
+        [open] & {
+          display: inline;
+        }
+      }
+
+      .open {
+        display: inline;
+
+        [open] & {
+          display: none;
+        }
+      }
+
+      [open] & {
+        display: inline;
+      }
+
+      &:after {
+        margin-top: -6px;
+        content: "+";
+        float: left;
+        margin-right: 0.4em;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+
+        [open] & {
+          content: "-";
+          margin-top: -8px;
+        }
+      }
+    }
+
+    &__text {
+      color: #fff;
+      line-height: 1.7;
+      padding: 1em;
+    }
+
+    + .accordion__item {
+      margin-top: 1em;
+    }
+
+    ::-webkit-details-marker {
+      display: none;
+    }
+
+    &[open] {
+      transition: all 0.8s;
+      min-height: 100px;
+      max-height: 500px;
+    }
+  }
+}
 
