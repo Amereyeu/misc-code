@@ -1,1 +1,51 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 0px;
+  font-family: system-ui, sans-serif;
+  background: #eee;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+div {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.top {
+  --offset: 10px;
+  position: sticky;
+  bottom: 20px;
+  margin-right: 10px;
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  width: 50px;
+  aspect-ratio: 1;
+  background: dodgerblue;
+  border-radius: 100%;
+  font-size: 0;
+}
+
+.top:before {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  transform: translateY(20%) rotate(-45deg);
+  border-top: 5px solid #fff;
+  border-right: 5px solid #fff;
+}
 
