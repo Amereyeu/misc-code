@@ -1,1 +1,54 @@
+$bg-color: hsl(256, 33, 10);
+$dot-color: hsl(256, 33, 70);
+$dot-size: 1px;
+$dot-space: 22px;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,200&display=swap");
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+}
+
+.sticky-list {
+  background: #fff;
+  color: #000;
+  height: 320px;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  dt {
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    background: #263238;
+    color: #fff;
+    padding: 0.25rem 1rem;
+  }
+
+  dd {
+    margin: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  dd + dt {
+    margin-top: 1rem;
+  }
+}
 
