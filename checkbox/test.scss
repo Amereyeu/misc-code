@@ -1,1 +1,39 @@
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+input {
+  --s: 40px;
+
+  height: var(--s);
+  width: calc(2 * var(--s));
+  border-radius: var(--s);
+  border: calc(var(--s) / 10) solid #0000;
+  padding: calc(var(--s) / 10);
+  background: conic-gradient(blue 50%, red 0) border-box var(--p, left) / 200%;
+  -webkit-mask: radial-gradient(50% 50%, #000 98%, #0000) no-repeat
+      var(--p, left) / calc(3 * var(--s) / 5) content-box,
+    linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: source-over, xor;
+  mask-composite: add, exclude;
+  transition: 0.5s;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input:checked {
+  --p: right;
+}
+input:disabled {
+  background: #948c75;
+  cursor: not-allowed;
+  --p: center;
+}
+input:focus-visible {
+  border-color: #0009;
+}
