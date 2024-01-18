@@ -1,1 +1,43 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #ddd;
+}
+
+section {
+  margin-inline: max(10px, 50% - 800px/2);
+  margin-block: 50px;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.bg {
+  border-image: conic-gradient(dodgerblue 0 0) fill 0 //0 100vw;;
+  padding-block: 10px;
+}
+
+.bg2 {
+  --a: 3deg;
+  --c: greenyellow;
+
+  border-image: conic-gradient(var(--c) 0 0) fill 0 //9999px;;
+  clip-path: polygon(
+    -9999px calc(tan(var(--a)) * 9999px),
+    9999px calc(tan(var(--a)) * -9999px),
+    calc(100% + 9999px) calc(100% - tan(var(--a)) * 9999px),
+    calc(100% - 9999px) calc(100% + tan(var(--a)) * 9999px)
+  );
+}
+
+.bg3 {
+  border-image: linear-gradient(0deg, red 5px, lightgoldenrodyellow 0) fill 0
+    //0 100vw;;
+  padding-block: 10px;
+}
 
