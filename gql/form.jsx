@@ -10,23 +10,23 @@ const onSubmit = async (values, actions) => {
   // console.log("val", values);
   // console.log("act", actions);
 
+  //tělo emailu
   const emailContent = `
-    //tělo emailu
     <dl>
       <dt>Od:</dt> <dd> <strong>${values.name}</strong></dd>
       <dt>Emailová adresa:</dt> <dd><strong>${values.email}</strong></dd>
       <dt>Zpráva:</dt> <dd>${values.message}</dd>
     </dl>
     `;
-
-  const data = await sendMail(
+  
     //předmět emailu
-    "Nová zpráva z webu test.amerey.eu",
+  const data = await sendMail(
+    "Nová zpráva z webu test.eu",
     emailContent,
   );
 
+      //email se úspěšně poslal
   if (data.sent) {
-    //email se úspěšně poslal
     toast.success("Email byl odeslán", {
       position: "top-center",
       autoClose: 4000,
@@ -61,7 +61,6 @@ const BasicForm = () => {
   });
 
   return (
-    <>
       <div className="form-wrap">
         <form
           id="contact-form"
@@ -130,7 +129,6 @@ const BasicForm = () => {
 
         <ToastContainer />
       </div>
-    </>
   );
 };
 export default BasicForm;
