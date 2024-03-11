@@ -1,7 +1,6 @@
 
 import { useCountUp } from "react-countup";
 
-
 function Counter() {
   useCountUp({
     ref: "counter",
