@@ -1,1 +1,133 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #ddd;
+  font-family: "Lato", sans-serif;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.table {
+  width: 800px;
+  margin: 30px auto;
+  color: #000;
+  border: 1px solid #000;
+  border-collapse: collapse;
+
+  td,
+  th {
+    text-align: left;
+    padding: 0.4rem 1rem;
+  }
+
+  th {
+    background: #000;
+    color: #fff;
+  }
+
+  tr:nth-child(odd) {
+    background: #eee;
+  }
+}
+
+/* horizontal scroll */
+.table1-wrap {
+  overflow: auto;
+  max-width: 100%;
+}
+
+/* hiding columns at breakpoint */
+.table2-wrap {
+  @media screen and (max-width: 768px) {
+    .table {
+      max-width: 600px;
+    }
+    
+    th:nth-child(2),
+    tr td:nth-child(2) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+        .table {
+      max-width: 460px;
+    }
+    
+    th:nth-child(5),
+    tr td:nth-child(5) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+/* responsive table */
+.table3-wrap {
+  @media screen and (max-width: 768px) {
+    .table {
+      max-width: 600px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+    thead {
+      position: absolute;
+      opacity: 0;
+    }
+
+    tr {
+      margin: 1rem 0;
+    }
+
+    td {
+      border-bottom: 1px solid #fff;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      /* display: flex - if you want to align 2nd column to the right egde */
+
+      &:last-child {
+        border: 0;
+      }
+
+      &::before {
+        font-weight: bold;
+        /* margin-right: auto; - if you want to align 2nd column to the right egde */
+      }
+
+      &:nth-of-type(1)::before {
+        content: "Rank";
+      }
+
+      &:nth-of-type(2)::before {
+        content: "Year";
+      }
+
+      &:nth-of-type(3)::before {
+        content: "Artist";
+      }
+
+      &:nth-of-type(4)::before {
+        content: "Song";
+      }
+
+      &:nth-of-type(5)::before {
+        content: "Album";
+      }
+    }
+  }
+}
 
