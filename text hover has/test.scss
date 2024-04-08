@@ -1,1 +1,24 @@
 
+.list {
+  padding: 2rem;
+  list-style: none;
+
+  .item {
+    text-decoration: none;
+    color: goldenrod;
+
+    h2 {
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 0 0 2rem 0;
+    }
+  }
+}
+
+.list:has(:hover) .item:not(:hover) {
+  opacity: 30%;
+}
