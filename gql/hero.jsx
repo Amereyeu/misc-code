@@ -1,4 +1,3 @@
-
 function Hero({ title, option }) {
   return (
     <div className="hero-wrap">
