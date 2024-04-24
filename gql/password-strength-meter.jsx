@@ -1,13 +1,8 @@
-
 import { useState } from "react";
-
 import PasswordStrengthBar from "react-password-strength-bar";
 
 export const RegisterForm = () => {
-
   const [password, setPassword] = useState("");
-
-
 
   return (
     <form>
