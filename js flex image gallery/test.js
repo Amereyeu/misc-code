@@ -2,6 +2,10 @@
 const slides = document.querySelectorAll(".slide");
 
 function toggleOpen() {
+  if (document.querySelector(".slide.open") != null) {
+    document.querySelector(".slide.open").classList.remove("open");
+  }
+
   this.classList.toggle("open");
 }
 
