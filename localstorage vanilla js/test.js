@@ -2,6 +2,8 @@ const addItems = document.querySelector(".add-items");
 const itemsList = document.querySelector(".books");
 const items = JSON.parse(localStorage.getItem("items")) || [];
 
+const deleteAll = document.querySelector(".delete-all");
+
 function addItem(e) {
   e.preventDefault();
 
@@ -26,6 +28,7 @@ function populateList(books = [], booksList) {
         book.returned ? "checked" : ""
       } />
           <label for="item${i}">${book.text}</label>
+          <button class="delete">D</button>
         </li>
       `;
     })
@@ -43,7 +46,16 @@ function toggleReturned(e) {
   populateList(items, itemsList);
 }
 
+function deleteAllItems(e) {
+  e.preventDefault();
+
+  localStorage.clear();
+  console.log(localStorage.length);
+
+  const items = [];
+  populateList(items, itemsList);
+}
+
 addItems.addEventListener("submit", addItem);
 itemsList.addEventListener("click", toggleReturned);
-
-populateList(items, itemsList);
+deleteAll.addEventListener("click", deleteAllItems);
