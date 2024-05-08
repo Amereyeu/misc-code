@@ -51,14 +51,15 @@ body {
     }
   }
 
-  .add-items {
-    margin-top: 20px;
+  .add-items,
+  .delete-all-items {
+    margin-top: 10px;
 
     input {
       padding: 10px;
       outline: 0;
       border: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
     }
   }
 }
-
