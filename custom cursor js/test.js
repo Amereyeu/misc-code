@@ -1,4 +1,3 @@
-
 const customCursor = document.querySelector(".cursor");
 const navLinks = document.querySelectorAll(".nav-links li");
 
