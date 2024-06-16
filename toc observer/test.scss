@@ -1,1 +1,118 @@
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  background: #ddd;
+  font-size: 1.2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem auto;
+
+  nav {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+
+    ul,
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 1rem;
+        display: flex;
+        gap: 0.2rem;
+
+        &:before {
+          background: #f9f9f9;
+          color: #aaa;
+          font-size: 12px;
+          font-weight: bold;
+          padding: 5px;
+        }
+
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 0.125rem 0;
+          color: #000;
+          transition: all 50ms ease-in-out;
+
+          &:hover,
+          &:focus {
+            color: #39f;
+          }
+
+          &.active {
+            color: #39f;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    ul,
+    ol {
+      counter-reset: one two three four;
+
+      li:before {
+        counter-increment: one;
+        content: counter(one) ".";
+      }
+
+      ul,
+      ol {
+        counter-reset: two three four;
+
+        li:before {
+          counter-increment: two;
+          content: counter(one) "." counter(two);
+        }
+
+        ul,
+        ol {
+          counter-reset: three four;
+
+          li:before {
+            counter-increment: three;
+            content: counter(one) "." counter(two) "." counter(three);
+          }
+
+          ul,
+          ol {
+            counter-reset: four;
+
+            li:before {
+              counter-increment: four;
+              content: counter(one) "." counter(two) "." counter(three) "."
+                counter(four);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  article {
+    padding: 0 1rem 0 2rem;
+  }
+}
