@@ -1,4 +1,3 @@
-
 window.addEventListener("DOMContentLoaded", () => {
   var list = document.getElementById("toc");
   var content = document.getElementById("content");
