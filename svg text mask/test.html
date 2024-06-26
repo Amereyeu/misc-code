@@ -1,1 +1,30 @@
 
+<svg width="0" height="0" aria-hidden="true">
+  <filter id="text" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+    <feImage href="https://images.unsplash.com/photo-1585079374502-415f8516dcc3?q=80&amp;w=1470&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=900" result="back"></feImage>
+    <feColorMatrix values="0 0 0 0 0 
+		                      0 0 0 0 0 
+													0 0 0 0 0 
+													7 7 -9 0 0"></feColorMatrix>
+    <feComponentTransfer>
+      <feFuncA type="discrete" tableValues="0 1"></feFuncA>
+    </feComponentTransfer>
+    <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+    <feComponentTransfer result="mask">
+      <feFuncA type="table" tableValues="-1 2"></feFuncA>
+    </feComponentTransfer>
+    <feColorMatrix in="SourceGraphic" values="0 0      0       0 .65 
+									        0 0      0       0 .15 
+													0 0      0       0 .1 
+													0 0 2 0 0"></feColorMatrix>
+    <feComposite in2="mask" operator="in" result="fill"></feComposite>
+    <feColorMatrix in="SourceGraphic" values="0 0      0       0 .75 
+									        0 0      0       0 .75 
+													0 0      0       0 .55 
+													2 0 0 0 0"></feColorMatrix>
+    <feComposite in2="mask" operator="out"></feComposite>
+    <feBlend in="fill"></feBlend>
+    <feBlend in2="back"></feBlend>
+  </filter>
+</svg>
+<div class="text">fingerprint</div>
