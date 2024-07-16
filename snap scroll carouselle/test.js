@@ -1,4 +1,3 @@
-
 let list = document.querySelector(".list");
 let item = document.querySelector(".list__item");
 let itemWidth = item.offsetWidth;
