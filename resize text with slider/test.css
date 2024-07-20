@@ -1,1 +1,145 @@
 
+@property --i {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+  background: #eee;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+html {
+  --min: 14px;
+  --max: 32px;
+  --step: 1px;
+
+  timeline-scope: --thumb-view;
+  animation: i 1s linear;
+  animation-timeline: --thumb-view;
+  animation-range: entry 100% exit 0%;
+  font-size: round(
+    var(--min) + (var(--max) - var(--min)) * var(--i),
+    var(--step)
+  );
+}
+
+@keyframes i {
+  to {
+    --i: 0;
+  }
+}
+
+.text-slider {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+input {
+  --c: dodgerblue;
+  --g: 11px;
+  --l: 5px;
+  --s: 30px;
+
+  width: 400px;
+  height: var(--s);
+  --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+input:focus-visible,
+input:hover {
+  --p: 25%;
+}
+
+input:active,
+input:focus-visible {
+  --_b: var(--s);
+}
+
+/* chromium */
+input[type="range" i]::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 1/0 100vw/0
+    calc(100vw + var(--g));
+  clip-path: polygon(
+    0 calc(50% + var(--l) / 2),
+    -100vw calc(50% + var(--l) / 2),
+    -100vw calc(50% - var(--l) / 2),
+    0 calc(50% - var(--l) / 2),
+    0 0,
+    100% 0,
+    100% calc(50% - var(--l) / 2),
+    100vw calc(50% - var(--l) / 2),
+    100vw calc(50% + var(--l) / 2),
+    100% calc(50% + var(--l) / 2),
+    100% 100%,
+    0 100%
+  );
+  -webkit-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+  view-timeline: --thumb-view inline;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: var(--s);
+  width: var(--s);
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 1/0 100vw/0
+    calc(100vw + var(--g));
+  clip-path: polygon(
+    0 calc(50% + var(--l) / 2),
+    -100vw calc(50% + var(--l) / 2),
+    -100vw calc(50% - var(--l) / 2),
+    0 calc(50% - var(--l) / 2),
+    0 0,
+    100% 0,
+    100% calc(50% - var(--l) / 2),
+    100vw calc(50% - var(--l) / 2),
+    100vw calc(50% + var(--l) / 2),
+    100% calc(50% + var(--l) / 2),
+    100% 100%,
+    0 100%
+  );
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+  view-timeline: --thumb-view inline;
+}
+
+@supports not (color: color-mix(in srgb, red, red)) {
+  input {
+    --_c: var(--c);
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  html {
+    font-size: 16px;
+  }
+  input[type="range"] {
+    display: none;
+  }
+}
+
+p {
+  font-size: 1rem;
+  text-wrap: pretty;
+}
