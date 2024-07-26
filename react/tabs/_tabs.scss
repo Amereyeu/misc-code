@@ -1,1 +1,112 @@
 
+/*********************************************
+ * prices section
+ *********************************************/
+
+.pricelist-wrap {
+  @include section-margin;
+  max-width: $max-width;
+
+  h2 {
+    @include heading;
+
+    @include break($medium) {
+      text-align: center;
+    }
+  }
+
+  .pricelist {
+    nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      border: 1px solid $color-secondary;
+    }
+
+    &__tab {
+      padding: 1rem;
+      box-shadow: 0 0 4px black;
+      transition: all 0.6s ease;
+      text-decoration: none;
+      font-family: $headings;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $color-primary;
+        cursor: pointer;
+
+        .pricelist__tab__text h3 {
+          color: $color-secondary;
+        }
+      }
+
+      &__text {
+        h3 {
+          text-align: center;
+          color: $color-primary;
+
+          @include break($large) {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+
+    &__content {
+      margin-top: 2rem;
+      min-height: 200px;
+
+      &__item {
+        max-width: 800px;
+        transition: all 0.6s ease;
+        position: relative;
+        padding: 12px 20px;
+        border-radius: 4px;
+        border: 3px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto 1rem;
+        flex-direction: column;
+        box-shadow: 0 0 4px black;
+
+        @include break(480px) {
+          flex-direction: row;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 0;
+          border-left: 2px solid;
+          border-right: 3px solid;
+          border-bottom-right-radius: 3px;
+          border-top-right-radius: 3px;
+          left: -3px;
+          top: 50%;
+          transform: translate(0, -50%);
+          height: 30px;
+          color: $color-primary;
+          transition: all 0.6s ease;
+        }
+
+        &:hover {
+          background-color: lighten($color: $color-primary, $amount: 20%);
+          transition: all 0.6s ease;
+          color: $color-white;
+
+          &::before {
+            color: $color-white;
+            transition: all 0.6s ease;
+            left: 0;
+          }
+        }
+
+        p:nth-of-type(2) {
+          font-family: $headings;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
