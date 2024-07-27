@@ -1,1 +1,43 @@
 
+/*********************************************
+ * gallery section
+ *********************************************/
+
+.gallery-wrap {
+  @include section-margin;
+
+  h2 {
+    @include heading;
+
+    @include break($medium) {
+      text-align: center;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: auto;
+
+    &__image {
+      flex: 1 1 0;
+      height: 250px;
+      width: auto;
+      max-width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.5s;
+      border: 3px solid #fff;
+      box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%),
+        0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -7px rgb(0 0 0 / 20%);
+
+      &:hover {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
