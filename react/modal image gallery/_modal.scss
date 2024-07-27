@@ -1,1 +1,85 @@
 
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  .modal {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+
+    .md {
+      position: relative;
+
+      &__close {
+        background-color: rgba($color-white, 0.7);
+        cursor: pointer;
+        position: absolute;
+        right: 16px;
+        top: 32px;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        z-index: 996;
+        @include flex-center();
+
+        &:before {
+          content: "+";
+          font-size: 30px;
+          transform: rotate(-225deg);
+          font-weight: 600;
+          color: $color-primary;
+        }
+      }
+    }
+    &__inner {
+      padding: 1rem;
+      display: grid;
+      height: 100vh;
+      place-content: center;
+
+      @include break($medium) {
+        padding: 3rem;
+      }
+
+      &__image {
+        width: 100%;
+        height: 100vh;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+    }
+
+    &__arrow-left,
+    &__arrow-right {
+      background-color: rgba($color-white, 0.7);
+      color: $color-primary;
+      position: absolute;
+      top: calc(50% - 25px);
+      width: 50px;
+      height: 50px;
+      z-index: 999;
+      cursor: pointer;
+      border-radius: 4px;
+      @include flex-center();
+    }
+
+    &__arrow-left {
+      left: 16px;
+      transform: rotate(270deg);
+    }
+
+    &__arrow-right {
+      right: 16px;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.dbs {
+  overflow-y: hidden;
+}
