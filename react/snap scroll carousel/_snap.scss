@@ -1,1 +1,64 @@
 
+.list-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 290px;
+  max-width: 800px;
+  margin: 200px auto;
+
+  .list {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    max-width: 800px;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+
+    &__item {
+      box-shadow:
+        0 16px 24px 2px rgb(0 0 0 / 14%),
+        0 6px 30px 5px rgb(0 0 0 / 12%),
+        0 8px 10px -7px rgb(0 0 0 / 20%);
+      border: 3px solid #fff;
+      background-color: darkcyan;
+      scroll-snap-align: start;
+      margin-right: 0.5rem;
+
+      &__content {
+        width: 200px;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  .button {
+    @include flex-center();
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 100%;
+    bottom: 3rem;
+    border: 3px solid #fff;
+    box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%);
+
+    &.previous {
+      left: 0;
+    }
+
+    &.next {
+      left: 2.2rem;
+    }
+  }
+}
