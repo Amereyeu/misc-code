@@ -1,1 +1,54 @@
 
+/*********************************************
+ * information bar on top of index page
+ *********************************************/
+
+.information-wrap {
+  display: block;
+  background-color: darken($color: $color-primary, $amount: 20%);
+  padding: 8px 16px;
+  color: $color-white;
+
+  .information {
+    font-size: 14px;
+
+    @include break($large) {
+      display: flex;
+    }
+
+    &__map,
+    &__phone,
+    &__clock,
+    &__social {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+
+      @include break($large) {
+        margin-right: 5rem;
+      }
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+        fill: #fff;
+      }
+    }
+
+    &__social {
+      margin: 0 2rem 0 auto;
+      gap: 0.5rem;
+
+      svg {
+        transition: all 0.4s ease-in;
+        transform: scale(1);
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
