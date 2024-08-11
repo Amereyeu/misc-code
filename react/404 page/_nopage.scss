@@ -1,1 +1,70 @@
 
+/*********************************************
+ * 404 page
+ *********************************************/
+
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  min-width: 300px;
+  width: 100%;
+  height: calc(100vh - 198px);
+  padding: 1rem;
+  background: url(../../images/flat.jpg) no-repeat center center;
+  background-size: cover;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: $color-primary;
+
+    @include break($medium) {
+      font-size: 4rem;
+    }
+  }
+
+  // &__link {
+  //   font-size: 1.4rem;
+  //   color: $color-black;
+  //   text-decoration: none;
+  //   transition: all 0.6s;
+
+  //   @include break($medium) {
+  //     font-size: 2rem;
+  //   }
+
+  //   &:hover {
+  //     text-decoration: underline;
+  //   }
+  // }
+
+  &__link {
+    transition: all 0.6s ease;
+    font-size: 14px;
+    color: $color-secondary;
+    font-weight: 600;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    position: relative;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    text-decoration: none;
+    margin: 1rem auto 0;
+    display: block;
+    text-align: center;
+    transition: all 0.6s ease;
+    max-width: 300px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-secondary;
+      color: $color-primary;
+    }
+  }
+}
+
