@@ -1,1 +1,59 @@
+/*********************************************
+ * faq section
+ *********************************************/
+
+.faqs {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .faq {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 3px solid $color-white;
+    box-shadow:
+      0 16px 24px 2px rgb(0 0 0 / 14%),
+      0 6px 30px 5px rgb(0 0 0 / 12%),
+      0 8px 10px -7px rgb(0 0 0 / 20%);
+
+    &:first-of-type {
+      margin: 0 0 1rem;
+    }
+
+    &__question {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__text {
+        font-family: $headings;
+        font-weight: 600;
+        color: $color-primary;
+        font-size: 1.2rem;
+      }
+
+      &__icon {
+        &:before {
+          content: "+";
+          font-size: 30px;
+          transition: transform 0.3s ease-in-out;
+          font-weight: 600;
+          color: $color-primary;
+          float: left;
+        }
+      }
+    }
+
+    &__answer {
+      overflow: hidden;
+    }
+
+    .open {
+      &:before {
+        transform: rotate(-225deg);
+      }
+    }
+  }
+}
 
