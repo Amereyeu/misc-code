@@ -1,1 +1,36 @@
 
+.horizontal-wrap {
+  .horizontal {
+    position: relative;
+    height: 180vh;
+
+    &__inner {
+      display: flex;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      align-items: center;
+      height: 100vh;
+
+      &__items {
+        display: flex;
+        gap: 1rem;
+
+        &__item {
+          overflow: hidden;
+          position: relative;
+          height: 420px;
+          width: 280px;
+
+          .bgimage {
+            position: absolute;
+            inset: 0;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 3000ms;
+          }
+        }
+      }
+    }
+  }
+}
