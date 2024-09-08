@@ -1,1 +1,19 @@
 
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: $color-white;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
+  display: none;
+
+  @include break($large) {
+    display: block;
+  }
+  
+}
