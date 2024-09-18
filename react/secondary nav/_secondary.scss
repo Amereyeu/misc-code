@@ -1,1 +1,99 @@
 
+.secondary-navigation {
+  position: relative;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  max-width: 1600px;
+  z-index: 33;
+
+  &__button {
+    transition: all 1s;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $color-white;
+    bottom: 60px;
+    right: 30px;
+    position: absolute;
+    z-index: 33;
+    cursor: pointer;
+    border: 2px solid $color-primary;
+
+    &::before,
+    &::after {
+      transition: transform 200ms ease-out;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      margin-left: -10px;
+      margin-top: -1px;
+      border: 1px solid $color-primary;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 20px;
+      margin-left: -1px;
+      margin-top: -10px;
+      border: 1px solid $color-primary;
+    }
+
+    &.open {
+      &::before,
+      &::after {
+        transition: transform 200ms ease-out;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    bottom: 120px;
+    right: 30px;
+
+    &__item {
+      margin-bottom: 2px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: $color-white;
+      border: 2px solid $color-primary;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      svg {
+        width: 2.6rem;
+        height: 2.6rem;
+        color: $color-primary;
+      }
+    }
+  }
+}
