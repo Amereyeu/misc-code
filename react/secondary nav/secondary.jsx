@@ -6,6 +6,8 @@ import { useState } from "react";
 import { CiFacebook, CiInstagram, CiShoppingCart } from "react-icons/ci";
 import { IoIosArrowUp } from "react-icons/io";
 
+import Option from "./Option";
+
 function SecondaryNavigation() {
   const [open, setOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
@@ -41,46 +43,6 @@ function SecondaryNavigation() {
         staggerChildren: 0.1,
       },
     },
-  };
-
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        when: "beforeChildren",
-      },
-    },
-    closed: {
-      opacity: 0,
-      y: 15,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-  };
-
-  const actionIconVariants = {
-    open: { scale: 1, y: 0 },
-    closed: { scale: 0, y: -7 },
-  };
-
-  const Option = ({ href, Icon, setOpen, setGoTop }) => {
-    return (
-      <motion.li
-        variants={itemVariants}
-        onClick={() => {
-          setOpen(false);
-          setGoTop(true);
-        }}
-      >
-        <div className="secondary-navigation__list__item">
-          <motion.a href={href} target="_blank" variants={actionIconVariants}>
-            <Icon />
-          </motion.a>
-        </div>
-      </motion.li>
-    );
   };
 
   return (
