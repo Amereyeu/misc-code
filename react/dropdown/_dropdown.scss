@@ -1,1 +1,124 @@
 
+/*********************************************
+ * dropdown select box
+ *********************************************/
+.select-box-wrap {
+  .select-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+
+    margin-top: 5rem;
+
+    &__current {
+      position: relative;
+      box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
+      cursor: pointer;
+      outline: none;
+      border: 1px solid #000;
+
+      &__value {
+        display: flex;
+        width: 100%;
+        padding: 0.5rem 1rem;
+
+        a {
+          text-decoration: none;
+          color: $color-primary;
+          text-transform: uppercase;
+          font-family: $headings;
+        }
+      }
+
+      &__icon {
+        position: absolute;
+        top: 50%;
+        right: 17px;
+        transition: all 1s;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 10px;
+          margin-left: -10px;
+          margin-top: -1px;
+          border: 1px solid #000;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          height: 10px;
+          margin-left: -5px;
+          margin-top: -6px;
+          border: 1px solid #000;
+        }
+      }
+
+      &:focus {
+        .select-box__current__icon::after {
+          display: none;
+          transition: all 1s;
+        }
+
+        & + .select-box__list {
+          opacity: 1;
+          animation-name: none;
+
+          &__option {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__list {
+      background-color: #fff;
+      // position: absolute;
+      width: 100%;
+      list-style: none;
+      opacity: 0;
+      margin-top: 5px;
+      animation-name: HideList;
+      animation-duration: 0.5s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: step-start;
+      box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
+      border: 1px solid #000;
+
+      &__option {
+        &__item {
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          color: $color-primary;
+          text-transform: uppercase;
+          font-family: $headings;
+          transition: all 0.8s;
+          display: block;
+          width: 100%;
+
+          &:hover {
+            background: $color-black;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
