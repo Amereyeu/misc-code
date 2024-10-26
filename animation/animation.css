@@ -85,7 +85,6 @@ body
 
 
 /* Animation One */
-
 .one span {
 	color: #24a8e6;
 	opacity: 0;
@@ -106,7 +105,6 @@ body
 
 
 /* Animation Two */
-
 .two span {
 	color: #a5cb21;
 	opacity: 0;
@@ -127,8 +125,6 @@ body
 
 
 /* Animation Three */
-
-
 .three span {
 	color: #b10e81;
 	opacity: 0;
