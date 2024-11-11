@@ -1,1 +1,17 @@
 
+  &::after {
+    content: "";
+    opacity: 0.3;
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--m2 {
+    &::after {
+      background-image: url(/images/files.webp);
+      background-size: cover;
+    }
+  }
