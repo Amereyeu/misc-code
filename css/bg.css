@@ -15,3 +15,20 @@
       background-size: cover;
     }
   }
+
+
+@mixin heading($fow: 900, $mb: 1.6rem) {
+  font-size: clamp(2rem, 1.3077rem + 3.4615vw, 3.125rem);
+  font-weight: $fow;
+  margin-bottom: $mb;
+  font-family: $headings;
+  text-align: center;
+  letter-spacing: 4px;
+
+  --hue: 334;
+  --shadow: oklch(25% 0.2 var(--hue));
+  --highlight: oklch(98% 0.05 var(--hue));
+  text-shadow:
+    0 0.15ch 15px var(--shadow),
+    0 -2px 0 var(--highlight);
+}
