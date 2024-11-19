@@ -106,23 +106,5 @@
   }
 }
 
-    .copy {
-      padding: 1rem;
-      text-align: center;
-      color: $color-white;
-      font-size: 0.875rem;
 
-      @include break($medium) {
-        font-size: 1rem;
-      }
-
-      &__link {
-        text-decoration: none;
-        color: $color-white;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
 
