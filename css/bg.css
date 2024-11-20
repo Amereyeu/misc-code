@@ -85,26 +85,6 @@
           }
         }
 
-.modul-wrap {
-  margin: 1rem auto;
-  display: block;
-  max-width: $max-width;
-
-  @include break($medium) {
-    margin: 3rem auto;
-  }
-
-  h2 {
-    font-size: 2rem;
-    text-align: center;
-    font-family: $headings;
-    padding: 1rem;
-    text-wrap: pretty;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-}
 
 
 
