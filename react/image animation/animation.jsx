@@ -6,7 +6,7 @@ import imageItems from "./gallery";
 function ImageAnimation() {
   const [data] = useState(imageItems);
 
-  const rotation = [10, -20, -5, 5, -20];
+  const rotation = [10, -20, -5, 5, -20, 10];
 
   const imageVariants = {
     initial: () => ({
