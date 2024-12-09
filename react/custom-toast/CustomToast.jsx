@@ -1,3 +1,7 @@
+/*********************************************
+ * custom toast block for toastify
+ *********************************************/
+
 import { useTranslation } from "react-i18next";
 
 function CustomToast() {
