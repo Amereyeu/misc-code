@@ -1,1 +1,226 @@
+/*********************************************
+ * toastify styles
+ *********************************************/
+
+.Toastify__toast-container {
+  z-index: 999;
+  -webkit-transform: translate3d(0, 0, 999px);
+  position: fixed;
+  padding: 4px;
+  width: 320px;
+
+  &--top-center {
+    top: 7rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Toastify__toast {
+    position: relative;
+    min-height: 64px;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    max-height: 800px;
+    overflow: hidden;
+    font-family: $primary;
+    cursor: pointer;
+    color: $color-secondary;
+    background: #000 linear-gradient(to bottom, rgb(3, 7, 18), rgb(0, 0, 0));
+    border: 3px solid $color-border;
+    box-shadow:
+      0 6px 30px 5px rgba(255, 255, 255, 0.12),
+      0 8px 10px -7px rgba(255, 255, 255, 0.1);
+
+    &-body {
+      margin: auto 0;
+      flex: 1 1 auto;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      &__inner {
+        gap: 1rem;
+        @include flex-center();
+
+        svg {
+          fill: $color-secondary;
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+
+    .Toastify__close-button {
+      background: transparent;
+      outline: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: 0.3s ease;
+      align-self: flex-start;
+
+      & :hover,
+      &:focus {
+        opacity: 1 !important;
+      }
+
+      &--light {
+        color: $color-secondary;
+        opacity: 0.6;
+      }
+
+      & > svg {
+        fill: currentColor;
+        height: 16px;
+        width: 14px;
+      }
+    }
+
+    .Toastify__progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 999;
+      opacity: 0.7;
+      transform-origin: left;
+
+      &-theme--light {
+        background: linear-gradient(to right, $color-primary, $color-secondary);
+      }
+
+      &--animated {
+        -webkit-animation: Toastify__trackProgress linear 1 forwards;
+        animation: Toastify__trackProgress linear 1 forwards;
+      }
+    }
+  }
+}
+
+// classes for animating enter and exit of toast and progress bar
+.Toastify--animate {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}
+
+.Toastify__bounce-exit--top-center {
+  -webkit-animation-name: Toastify__bounceOutUp;
+  animation-name: Toastify__bounceOutUp;
+}
+
+.Toastify__bounce-enter--top-center {
+  -webkit-animation-name: Toastify__bounceInDown;
+  animation-name: Toastify__bounceInDown;
+}
+
+// progress bar
+@-webkit-keyframes Toastify__trackProgress {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes Toastify__trackProgress {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+// sliding down when opening
+@-webkit-keyframes Toastify__bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes Toastify__bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+//sliding up when closing
+@-webkit-keyframes Toastify__bounceOutUp {
+  20% {
+    transform: translate3d(0, -10px, 0);
+  }
+  40%,
+  45% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
+@keyframes Toastify__bounceOutUp {
+  20% {
+    transform: translate3d(0, -10px, 0);
+  }
+  40%,
+  45% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0);
+  }
+}
 
