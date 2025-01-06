@@ -1,1 +1,79 @@
 
+/*********************************************
+ * drawer sliding from bottom
+ * with framer motion
+ *********************************************/
+
+.drawer-wrap {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+
+  .button {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-triary;
+    }
+  }
+
+  .drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background-color: rgba($color: $color-black, $alpha: 0.7);
+
+    &__inner {
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba($color: $color-black, $alpha: 0.9);
+      width: 100%;
+      height: 70vh;
+
+      &__content {
+        display: flex;
+        padding: 1rem;
+        justify-content: center;
+
+        &__button {
+          border-radius: 16px;
+          width: 3.5rem;
+          height: 0.5rem;
+          cursor: grab;
+          touch-action: none;
+        }
+
+        &__text {
+          overflow-y: auto;
+          position: relative;
+          z-index: 0;
+          padding: 3rem 1rem;
+          height: 100%;
+          margin: 1rem auto 0;
+          max-width: 64rem;
+          color: $color-white;
+
+          h2 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+          }
+
+          p {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
