@@ -1,1 +1,80 @@
+/*********************************************
+ * testimonials section with framer motion
+ *********************************************/
+
+.testimonials-wrap {
+  margin: 1rem;
+  display: grid;
+  gap: 3rem;
+
+  @include break($medium) {
+    margin: 3rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonials__images {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+
+    &__image {
+      position: absolute;
+      inset: 0;
+      transform-origin: bottom;
+
+      img {
+        @include image-shadow();
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .testimonials__text {
+    &__header {
+      font-weight: 900;
+      font-size: 1.75rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &__text {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    &__arrows {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+
+      @include break($medium) {
+        justify-content: left;
+      }
+
+      button {
+        @include flex-center();
+        @include square(36px);
+
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        background-color: $color-primary;
+        color: $color-white;
+        cursor: pointer;
+        border-radius: 100%;
+        font-weight: 900;
+      }
+    }
+  }
+}
 
