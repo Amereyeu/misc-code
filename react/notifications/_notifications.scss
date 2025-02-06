@@ -1,1 +1,56 @@
+.notifications-wrap {
+  --hue-1: #0cdcf7;
+  --hue-2: #d0e;
+  --hue-3: #91f;
+  --hue-4: #0d63f8;
+  --hue-5: #f08;
+  --hue-6: #4ff0b7;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 40px;
+
+  .header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transform-origin: bottom center;
+    pointer-events: none;
+
+    &__title {
+      font-size: 20px;
+      line-height: 1;
+      margin-left: 8px;
+    }
+
+    &__close {
+      @include flex-center();
+
+      font-size: 1rem;
+      line-height: 1;
+      margin-right: 8px;
+      background-color: $color-black;
+      padding: 4px 12px;
+      height: 20px;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      pointer-events: auto;
+      user-select: none;
+      color: $color-white;
+    }
+  }
+
+  .notification {
+    @include flex-center();
+
+    border-radius: 0.5rem;
+    user-select: none;
+  }
+}
 
