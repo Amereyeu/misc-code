@@ -1,4 +1,3 @@
-
 export const Gear = () => {
   return (
     <svg
