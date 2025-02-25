@@ -1,7 +1,7 @@
-
 body {
   background: #000;
 }
+
 div {
   background: linear-gradient(to left, hsl(200 100% 62%), hsl(122 100% 59%));
   -webkit-background-clip: text;
