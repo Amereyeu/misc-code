@@ -12,7 +12,7 @@
   width: 100%;
   height: calc(100vh - 198px);
   padding: 1rem;
-  background: url(../../images/flat.jpg) no-repeat center center;
+  background: url(../images/flat.jpg) no-repeat center center;
   background-size: cover;
 
   h1 {
@@ -26,21 +26,6 @@
       font-size: 4rem;
     }
   }
-
-  // &__link {
-  //   font-size: 1.4rem;
-  //   color: $color-black;
-  //   text-decoration: none;
-  //   transition: all 0.6s;
-
-  //   @include break($medium) {
-  //     font-size: 2rem;
-  //   }
-
-  //   &:hover {
-  //     text-decoration: underline;
-  //   }
-  // }
 
   &__link {
     transition: all 0.6s ease;
